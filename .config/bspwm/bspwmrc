@@ -1,0 +1,59 @@
+#!/bin/sh
+
+#pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor eDP-1 -d い ろ は に ほ へ と ち り ぬ
+
+bspc config border_width         2 
+bspc config window_gap           6
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+#bspc config focused_border_color '#22242b'
+bspc config focused_border_color '#2853ff'
+bspc config normal_border_color '#0f0f17'
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+bspc rule -a "Image Lounge" state=floating rectangle=800x600+0+0
+bspc rule -a generic state=floating rectangle=800x600+0+0
+bspc rule -a scrcpy state=floating
+# dual monitor settings
+if [[ $(xrandr -q | grep -w 'DP-1' | cut -d ' ' -f2) = 'connected' ]]; then
+xrandr --output DP-1 --left-of eDP-1
+bspc monitor DP-1 -d い ろ は に ほ
+bspc monitor eDP-1 -d へ と ち り ぬ
+fi
+
+# set background
+nitrogen --restore
+
+# blue light filter
+#redshift -P -O 4500
+
+# auto start
+#picom --experimental-backend -b &
+#nm-applet &
+#fcitx5 &
+#megasync &
+#numlockx &
+#kdeconnect-indicator &
+#numlockx &
+#dunst &
+#klipper &
+#mpd &
+#easyeffects --gapplication-service &
+
+wmname LG3D
+
+# start polybar
+$HOME/.config/polybar/launch.sh
+
+# minimize apps
+#sleep 1; xdotool search --name 'MEGAsync' windowclose
