@@ -1,0 +1,32 @@
+# dual monitor settings
+#if [[ $(xrandr -q | grep -w 'DP-1' | cut -d ' ' -f2) = 'connected' ]]; then
+#xrandr --output DP-1 --left-of eDP-1
+#bspc monitor DP-1 -d い ろ は に ほ
+#bspc monitor eDP-1 -d へ と ち り ぬ
+#fi
+
+# set background
+#nitrogen --restore
+
+# blue light filter
+redshift -P -O 4500
+
+# Start programs
+sxhkd &
+picom --experimental-backend -b &
+nm-applet &
+fcitx5 &
+megasync &
+kdeconnect-indicator &
+numlockx &
+dunst &
+# klipper &
+xfce4-power-manager &
+mpd &
+# easyeffects --gapplication-service &
+
+# start polybar
+#$HOME/.config/polybar/launch.sh
+
+# minimize apps
+sleep 1; xdotool search --name 'MEGAsync' windowclose
