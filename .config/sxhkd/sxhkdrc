@@ -1,3 +1,7 @@
+# test
+super + shift + u
+	/home/teruyo/umountTime.sh
+
 # reboot
 super + shift + Escape
 	reboot 
@@ -27,6 +31,11 @@ super + shift + period
 # toggle microphone
 XF86AudioMicMute
 	amixer set Capture toggle
+
+# emoji
+super + slash
+	rofi -show emoji
+
 
 #
 # keypad to open apps

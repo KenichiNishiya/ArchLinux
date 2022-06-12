@@ -1,8 +1,9 @@
 [colors]
 ;background = ${xrdb:color0:#222}
-;background = #222
-background = #0f0f17
-;background-alt = #444
+;background = #1e2371
+;;background = #0f0f17
+background = #05000b
+;background-alt = #080f45
 background-alt = #22242b
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
@@ -36,15 +37,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans Nerd Font:pixelsize=10.5;3
+#font-0 = NotoSans Nerd Font:pixelsize=11;3
+font-0 = "Noto Sans CJK JP:pixelsize=13;3"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSans Nerd Font:size=14;3
 font-3 = "Noto Sans CJK JP:pixelsize=10;1"
-font-4 = NotoSans Nerd Font:size=22;3
+font-4 = NotoSans Nerd Font:size=22;5
+font-5 = "Noto Sans CJK JP:pixelsize=17;2"
 
-modules-left = bspwm
+modules-left = bspwm time
 modules-center = arch mpd arch
-modules-right = time  date space pulseaudio space cpu  memory  filesystem space battery powermenu sep
+modules-right = date space pulseaudio space cpu  memory  filesystem space
 ;module-right = time date space pulseaduio space battery powermenu sep
 
 ;modules-right = time  date space pulseaudio space cpu  memory  filesystem space battery powermenu sep
@@ -92,15 +95,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = NotoSans Nerd Font:pixelsize=8.5;1
+#font-0 = NotoSans Nerd Font:pixelsize=10;3
+font-0 = "Noto Sans CJK JP:pixelsize=12;3"
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSans Nerd Font:size=13;3
 font-3 = "Noto Sans CJK JP:pixelsize=10;1"
-font-4 = NotoSans Nerd Font:size=22;3
+font-4 = NotoSans Nerd Font:size=22;5
+font-5 = "Noto Sans CJK JP:pixelsize=13;2"
 
-modules-left = bspwm
+modules-left = bspwm time
 modules-center = arch mpd arch 
-modules-right = time date pulseaudio  cpu memory filesystem battery 
+modules-right = date space pulseaudio space cpu memory filesystem 
 
 tray-position = right
 tray-padding = 2
@@ -142,43 +147,50 @@ label-indicator-underline = ${colors.secondary}
 
 [module/filesystem]
 type = internal/fs
-interval = 30
+interval = 60
 
 format-unmounted-prefix = " "
-format-mounted-prefix = " "
+format-mounted-prefix = " " 
+format-mounted-prefix-foreground = #C3272B 
 mount-0 = /
 label-mounted = "%{A1:alacritty -e ncdu &:}%free%%{A}"
+lalbel-mounted-forground = #C3272B 
 ;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = #C3272B  
 
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
 
 label-focused = %name%
-label-focused-background = #191927
-;label-focused-underline= ${colors.primary}
-label-focused-underline = #2853ff
-label-focused-padding = 2
+;label-focused-background = #191927
+label-focused-background = #191F45
+;label-focused-underline = #bd93f9
+label-focused-underline = #C3272B 
+;label-focused-underline = #2853ff
+label-focused-padding = 1
 ;label-focused-font = 4
 
 label-occupied = %name%
-label-occupied-padding = 2
+label-occupied-padding = 1
+;label-occupied-underline = #6A7F7A 
+label-occupied-underline = #bd93f9
 ;label-occupied-font = 4
 
 label-urgent = %name%!
+label-urgent-underline = #875F9A
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 ;label-urbent-font = 4
 
 label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1
 ;label-empty-font = 4
 
 ; Separator in between workspaces
-; label-separator = |
+;label-separator = |
 
 ;[module/i3]
 ;type = internal/i3
@@ -237,7 +249,7 @@ icon-pause =
 icon-next =
 ;icon-next = 
 
-label-song-maxlen = 50 
+label-song-maxlen = 32 
 label-song = %title%
 label-song-ellipsis = true
 
@@ -273,9 +285,10 @@ card = intel_backlight
 
 [module/memory]
 type = internal/memory
-interval = 2
+interval = 5
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = #C3272B 
+;format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #4bffdc
 ;label = %percentage_used%%
 label = "%{A1:alacritty -e htop &:}%mb_used%%{A}"
@@ -329,27 +342,32 @@ date = "  %Y年 %m月 %d日"
 ;time-alt = %H:%M:%S
 
 format-prefix = 
-format-prefix-foreground = #C93756 
+;format-prefix-foreground = #C93756 
+format-prefix-foreground = #C3272B 
 ;format-underline = #0a6cf5
 
-label = %date%
+label = "%{A1:alacritty --hold -e cal &:}%date%%{A}"
 
 [module/time]
 type = internal/date
 
 time = " %H:%M:%S"
+format-prefix-font = 6
+;label-font = 6
 
-format-prefix = 
-format-prefix-foreground = #78779B
+;format-prefix = 
+;format-prefix-foreground = #78779B
+format-prefix-foreground = #C3272B 
 
 label = %time%
 
 [module/cpu]
 type = internal/cpu
-interval = 2
+interval = 5
 format-prefix = " "
 format-padding = 0
-format-prefix-foreground = #ff3f9e
+format-prefix-foreground = #C3272B 
+;format-prefix-foreground = #ff3f9e
 ;format-background = #789
 label = "%{A1:alacritty -e htop &:}%percentage%%%{A}"
 
@@ -357,13 +375,14 @@ label = "%{A1:alacritty -e htop &:}%percentage%%%{A}"
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-format-volume-prefix = "墳 "
-format-volume-prefix-foreground = #ffef9e 
+format-volume-prefix = "音 "
+format-volume-prefix-foreground = #C3272B 
+;format-volume-prefix-foreground = #ffef9e 
 format-volume-background = ${colors.background}
 
 label-volume = "%percentage%%"
 
-label-muted = "婢 ミュート"
+label-muted = "音なし"
 label-muted-foreground = ${colors.red}
 label-muted-background = ${colors.background}
 
@@ -396,10 +415,12 @@ type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
-label-volume-foreground = ${root.foreground}
+;label-volume-foreground = ${root.foreground}
+label-volume-foreground = #C3272B 
 
 format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground-alt}
+format-muted-foreground = #C3272B 
+;format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
@@ -448,7 +469,8 @@ ramp-capacity-4 =  " "
 ;ramp-capacity-0 = 
 ;ramp-capacity-1 = 
 ;ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = #407A52
+;ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 
 
@@ -486,11 +508,11 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = ⛩
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = ⛩ cancel
 label-close-foreground = ${colors.secondary}
-label-separator = |
+;label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
@@ -524,9 +546,11 @@ margin-bottom = 5
 
 [module/space]
 type = custom/text
-content = ""
+content-font = 6 
+content = "く"
 content-background = ${colors.background}
-content-foreground = #232336
+;content-foreground = #232336
+content-foreground = #ffffff
 
 ;[module/sep]
 ;type = custom/text
@@ -537,7 +561,7 @@ content-foreground = #232336
 [module/arch]
 type = custom/text
 ;content = " "
-content = ""
+content = "%{A1:rofi -show drun %:}%{A}"
 content-font = 5
 content-background = ${colors.background}
 ;content-foreground = #1793d1

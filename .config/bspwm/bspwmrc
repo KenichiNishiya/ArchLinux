@@ -4,15 +4,16 @@
 
 bspc monitor eDP-1 -d い ろ は に ほ へ と ち り ぬ
 
-bspc config border_width         2 
-bspc config window_gap           6
+bspc config border_width         2.5 
+bspc config window_gap           5
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 #bspc config focused_border_color '#22242b'
-bspc config focused_border_color '#2853ff'
+bspc config focused_border_color '#C3272B'
+#bspc config focused_border_color '#2853ff'
 bspc config normal_border_color '#0f0f17'
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on
@@ -21,14 +22,17 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+bspc rule -a "PacketTracer" state=floating
 bspc rule -a "Image Lounge" state=floating rectangle=800x600+0+0
 bspc rule -a generic state=floating rectangle=800x600+0+0
 bspc rule -a scrcpy state=floating
 # dual monitor settings
 if [[ $(xrandr -q | grep -w 'DP-1' | cut -d ' ' -f2) = 'connected' ]]; then
-xrandr --output DP-1 --left-of eDP-1
-bspc monitor DP-1 -d い ろ は に ほ
-bspc monitor eDP-1 -d へ と ち り ぬ
+xrandr --output DP-1 --mode 1024x768 --rate 75 --right-of eDP-1
+#bspc monitor DP-1 -d い ろ は に ほ
+#bspc monitor eDP-1 -d へ と ち り ぬ
+bspc monitor eDP-1 -d い ろ は に ほ
+bspc monitor DP-1 -d へ と ち り ぬ
 fi
 
 # set background
@@ -43,7 +47,8 @@ nitrogen --restore
 #fcitx5 &
 #megasync &
 #numlockx &
-#kdeconnect-indicator &
+kdeconnect-indicator &
+klipper &
 #numlockx &
 #dunst &
 #klipper &

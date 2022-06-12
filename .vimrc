@@ -21,10 +21,10 @@
 
   au BufNewFile,BufRead * if &syntax == '' | set syntax=dosini | endif
 
-" Highlight the search term 
+" Highlight the search term
   set incsearch
 
-" Menu for commands tab completion 
+" Menu for commands tab completion
   set wildmenu
 
 " Avoids updating the screen before commands are completed
@@ -41,3 +41,9 @@ nnoremap n nzz
 nnoremap N Nzz
 nnoremap <Up> <Up>zz
 nnoremap <Down> <Down>zz
+
+" Sets vim to paste more than a few lines
+set viminfo='100,<10000000,s1000000,h
+
+" Make vim work with the 'crontab -e' command
+set backupskip+=/var/spool/cron/*
