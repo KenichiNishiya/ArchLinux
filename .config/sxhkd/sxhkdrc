@@ -53,7 +53,7 @@ super + {Insert,Home,Prior,Delete,End,Next}
 
 # setlayout
 super + shift + n
-	sh ~/Documents/Scripts/setlayout.sh
+	sh ~/Documents/scripts/setlayout.sh
 
 #
 # wm independent hotkeys
