@@ -120,7 +120,7 @@ if [ -f ~/.zsh_aliases ]; then
 fi
 
 #EXECUTE THE INITIAL MESSAGE
-sh ~/Documents/Scripts/fig.sh
+#sh ~/Documents/Scripts/fig.sh
 
 # INFINITE HISTORY
 HISTFILE=~/.zsh_history
@@ -132,5 +132,3 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # IGNORE COMMANDS WITH A SPACE BEFORE IT
 HISTCONTROL=ignoreboth
-
-#echo "* Fix mic input from headphone\n* Fix proton vpn fucking up wifi"
