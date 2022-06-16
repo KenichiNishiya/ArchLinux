@@ -284,19 +284,7 @@ sudo pacman -S --needed lib32-mesa vulkan-intel lib32-vulkan-intel vulkan-icd-lo
 sudo pacman -S libva-intel-driver libva-utils
 
 '⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
-# INSTALL OSU (NOT THE BEST WAY, BETTER WITH LUTRIS)
-
-# https://wiki.archlinux.org/title/User:Katoumegumi#osu!_on_Arch_Linux
-
-WINEARCH=win32 WINEPREFIX=~/.wine32 winetricks dotnet40 cjkfonts gdiplus
-mkdir ~/.wine32/osu/
-wget --output-document ~/.wine32/osu/osu\!.exe https://m1.ppy.sh/r/osu\!install.exe
-
-#START WITH THE FOLLOWING LINE
-WINEARCH=win32 WINEPREFIX=~/.wine32 wine ~/.wine32/osu/osu\!.exe
-
-'⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
-# WINE OPEN ON DEFAULT BROWSER
+ WINE OPEN ON DEFAULT BROWSER
 
 # http://www.webupd8.org/2010/03/how-to-make-wine-open-links-in-your.html
 

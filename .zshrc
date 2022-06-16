@@ -132,3 +132,7 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # IGNORE COMMANDS WITH A SPACE BEFORE IT
 HISTCONTROL=ignoreboth
+
+# STOP .zcompdump POLLUTING THE HOME FOLDER
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
