@@ -117,6 +117,7 @@ XMODIFIERS=@im=fcitx
 #EXPORT ALIAS FROM A DIFFERENT FILE
 if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
+    . /home/teruyo/.config/tk/.tk
 fi
 
 #EXECUTE THE INITIAL MESSAGE
