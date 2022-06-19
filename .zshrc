@@ -145,14 +145,25 @@ function preexec() {
 function precmd() {
   if [ $timer ]; then
     now=$(($(date +%s%0N)/1000000))
-    elapsed=$(($now-$timer))
-    export RPROMPT="%F{cyan}${elapsed}ms %{$reset_color%}"
+    milli=$(($now-$timer))
+    export RPROMPT="%F{cyan}${milli}ms %{$reset_color%}"
 
-    if [ $elapsed -ge 1000 ]; then
-      elapsed=$(( elapsed/1000  ))
-      export RPROMPT="%F{cyan}${elapsed}s %{$reset_color%}"
+    if [ $milli -ge 1000 ]; then
+      seconds=$(( $milli/1000 ))
+      if [ $seconds -lt 60 ]; then
+        export RPROMPT="%F{cyan}${seconds}s %{$reset_color%}"
+      else
+        minutes=$(( $seconds / 60 ))
+	seconds=$(( $seconds - ( $minutes * 60) ))
+        if [ $minutes -lt 60 ]; then
+	  export RPROMPT="%F{cyan}${minutes}m${seconds}s %{$reset_color%}"
+	else
+	  hours=$(( $minutes/60 ))
+	  minutes=$(( $minutes - ($hours * 60) ))
+	  export RPROMPT="%F{cyan}${hours}h${minutes}m${seconds}s%{$reset_color%}"
+	fi
+      fi
     fi
-
   fi
   unset timer
 }
