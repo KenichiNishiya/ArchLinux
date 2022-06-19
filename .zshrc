@@ -136,3 +136,22 @@ HISTCONTROL=ignoreboth
 # STOP .zcompdump POLLUTING THE HOME FOLDER
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
+# SHOW ELAPSED TIME FOR EACH COMMAND
+function preexec() {
+  timer=$(($(date +%s%0N)/1000000))
+}
+
+function precmd() {
+  if [ $timer ]; then
+    now=$(($(date +%s%0N)/1000000))
+    elapsed=$(($now-$timer))
+    export RPROMPT="%F{cyan}${elapsed}ms %{$reset_color%}"
+
+    if [ $elapsed -ge 1000 ]; then
+      elapsed=$(( elapsed/1000  ))
+      export RPROMPT="%F{cyan}${elapsed}s %{$reset_color%}"
+    fi
+
+  fi
+  unset timer
+}
