@@ -2,7 +2,8 @@
 
 #pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor eDP-1 -d い ろ は に ほ へ と ち り ぬ
+#bspc monitor eDP-1 -d い ろ は に ほ へ と ち り ぬ
+bspc monitor eDP1 -d 永 遠 の 巫 女 不 朽 の 幻 想 
 
 bspc config border_width         2.5 
 bspc config window_gap           5
@@ -28,11 +29,11 @@ bspc rule -a generic state=floating rectangle=800x600+0+0
 bspc rule -a scrcpy state=floating
 # dual monitor settings
 if [[ $(xrandr -q | grep -w 'DP-1' | cut -d ' ' -f2) = 'connected' ]]; then
-xrandr --output DP-1 --mode 1024x768 --rate 75 --right-of eDP-1
-#bspc monitor DP-1 -d い ろ は に ほ
-#bspc monitor eDP-1 -d へ と ち り ぬ
-bspc monitor eDP-1 -d い ろ は に ほ
-bspc monitor DP-1 -d へ と ち り ぬ
+xrandr --output DP-1 --mode 1024x768 --rate 75 --right-of eDP1
+#bspc monitor eDP-1 -d い ろ は に ほ
+#bspc monitor DP-1 -d へ と ち り ぬ
+bspc monitor eDP1 -d 永 遠 の 巫 女 
+bspc monitor DP-1 -d 不 朽 の 幻 想
 fi
 
 # set background

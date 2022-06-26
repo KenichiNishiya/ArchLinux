@@ -792,7 +792,7 @@ env LC_ALL=ja_JP.UTF-8
 ip link show
 # There should be a network named 'wlp2s0' or something
 
-# Set some environment variables to help create the hostpot
+# Set some environment variables to help create the hotspot
 IFNAME="wlp2s0" # Replace this with your network
 CON_NAME="Hostpot Name"
 nmcli con add type wifi ifname $IFNAME con-name $CON_NAME autoconnect yes ssid $CON_NAME
@@ -1015,9 +1015,9 @@ system-config-printer # Also know as "Print Settings" on rofi
 "Add > Network Printer > Forward > Apply"
 
 '⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
-# Performance support disabled
+# (wine?) Performance support disabled
 sudo vim /etc/sysctl.d/60-mdapi.conf
-# Paste the followin
+# Paste the following
 dev.i915.perf_stream_paranoid=0
 
 
