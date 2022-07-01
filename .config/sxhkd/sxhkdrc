@@ -1,7 +1,3 @@
-# test
-super + shift + u
-	/home/teruyo/umountTime.sh
-
 # reboot
 super + shift + Escape
 	reboot 
@@ -36,6 +32,9 @@ XF86AudioMicMute
 super + slash
 	rofi -show emoji
 
+# token
+super + t
+	token
 
 #
 # keypad to open apps

@@ -1022,3 +1022,15 @@ dev.i915.perf_stream_paranoid=0
 
 
 '⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
+# THEME NOT WORKING ON SOME APPS / CUSTOM CURSOR NOT APPEARING ON bspwm SCREEN
+
+sudo lxappearance 
+# You need to change the theme for the root user. Whenever running an app with sudo, it's running with the root user. Since the theme isn't global, it need to be set to the root user.
+
+'⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
+# CURSOR NOT THEMED ON DESKTOP SCREEN
+sudo vim /usr/share/icons/default/index.theme
+# On "Inherits=" change it to the theme's cursor name, e.g. Dracula-cursors
+
+'⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
+

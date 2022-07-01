@@ -47,3 +47,24 @@ set viminfo='100,<10000000,s1000000,h
 
 " Make vim work with the 'crontab -e' command
 set backupskip+=/var/spool/cron/*
+
+" Case insensitive search
+" set ignorecase 
+
+" Smart Indentation
+set smartindent
+
+" Convert tabs to spaces
+set expandtab
+
+" Automatically switch search to case-sensitive when search contains an uppercase letter
+set smartcase
+
+" Enable syntax highlighting
+"syntax enable
+
+" Highlight the line where the cursor is
+" set cursorline
+
+" Set undo history
+set history=1000

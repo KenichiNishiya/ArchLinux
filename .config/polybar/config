@@ -43,15 +43,11 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = NotoSans Nerd Font:size=14;3
 font-3 = "Noto Sans CJK JP:pixelsize=10;1"
 font-4 = NotoSans Nerd Font:size=22;5
-font-5 = "Noto Sans CJK JP:pixelsize=17;2"
+font-5 = "Noto Sans CJK JP:pixelsize=17;3"
 
-modules-left = bspwm time
+modules-left = bspwm date
 modules-center = arch mpd arch
-modules-right = date space pulseaudio space cpu  memory  filesystem space
-;module-right = time date space pulseaduio space battery powermenu sep
-
-;modules-right = time  date space pulseaudio space cpu  memory  filesystem space battery powermenu sep
-;module-right = time date space pulseaduio space battery powermenu sep
+modules-right = time space pulseaudio space cpu  memory  filesystem space
 
 tray-position = right
 tray-padding = 2
@@ -335,13 +331,16 @@ format-disconnected =
 type = internal/date
 interval = 10
 
-date = "  %m月 %d日"
+;date = "  %m月 %d日"
 ;date-alt = " %m-%d"
+
+date = "%m月 %d日"
 
 ;time = %I:%M
 ;time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix =
+;format-prefix = 
 ;format-prefix-foreground = #C93756 
 format-prefix-foreground = #C3272B 
 ;format-underline = #0a6cf5
@@ -546,7 +545,7 @@ margin-bottom = 5
 
 [module/space]
 type = custom/text
-content-font = 6 
+content-font = 6
 content = "く"
 content-background = ${colors.background}
 ;content-foreground = #232336
