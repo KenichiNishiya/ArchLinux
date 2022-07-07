@@ -13,7 +13,7 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 #bspc config focused_border_color '#22242b'
-bspc config focused_border_color '#C3272B'
+bspc config focused_border_color '#bd93f9'
 #bspc config focused_border_color '#2853ff'
 bspc config normal_border_color '#0f0f17'
 
@@ -28,12 +28,12 @@ bspc rule -a "Image Lounge" state=floating rectangle=800x600+0+0
 bspc rule -a generic state=floating rectangle=800x600+0+0
 bspc rule -a scrcpy state=floating
 # dual monitor settings
-if [[ $(xrandr -q | grep -w 'DP-1' | cut -d ' ' -f2) = 'connected' ]]; then
-xrandr --output DP-1 --mode 1024x768 --rate 75 --right-of eDP1
+if [[ $(xrandr -q | grep -w 'DP1' | cut -d ' ' -f2) = 'connected' ]]; then
+xrandr --output DP1 --mode 1024x768 --rate 75 --right-of eDP1
 #bspc monitor eDP-1 -d い ろ は に ほ
 #bspc monitor DP-1 -d へ と ち り ぬ
 bspc monitor eDP1 -d 永 遠 の 巫 女 
-bspc monitor DP-1 -d 不 朽 の 幻 想
+bspc monitor DP1 -d 不 朽 の 幻 想
 fi
 
 # set background

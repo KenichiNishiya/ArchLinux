@@ -47,9 +47,8 @@ dunst &
 xfce4-power-manager &
 mpd &
 klipper &
+qbittorrent &
 #easyeffects --gapplication-service &
 
 # Minimize app
 sleep 1; xdotool search --name 'MEGAsync' windowclose
-
-

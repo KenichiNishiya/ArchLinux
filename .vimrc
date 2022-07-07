@@ -8,7 +8,7 @@
 "  filetype plugin on
 
 " Makes it better to view number
-" set relativenumber
+ set relativenumber
 
 " Load an indent file for the detected file type.
 "  filetype indent on
@@ -42,6 +42,16 @@ nnoremap N Nzz
 nnoremap <Up> <Up>zz
 nnoremap <Down> <Down>zz
 
+" esc in insert & visual mode
+inoremap kj <esc>
+vnoremap kj <esc>
+
+" esc in command mode
+cnoremap kj <C-C>
+" Note: In command mode mappings to esc run the command for some odd
+" historical vi compatibility reason. We use the alternate method of
+" existing which is Ctrl-C
+
 " Sets vim to paste more than a few lines
 set viminfo='100,<10000000,s1000000,h
 
@@ -64,7 +74,7 @@ set smartcase
 "syntax enable
 
 " Highlight the line where the cursor is
-" set cursorline
-
+"set cursorline
+"hi CursorLine   cterm=NONE ctermbg=black ctermfg=white
 " Set undo history
 set history=1000

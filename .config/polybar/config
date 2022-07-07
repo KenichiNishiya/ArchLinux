@@ -68,7 +68,7 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 [bar/bar2]
-monitor = DP-1
+monitor = DP1
 width = 100%
 height = 27
 ;offset-x = 1%
@@ -161,9 +161,9 @@ pin-workspaces = true
 
 label-focused = %name%
 ;label-focused-background = #191927
-label-focused-background = #191F45
+label-focused-background = #282a36
 ;label-focused-underline = #bd93f9
-label-focused-underline = #C3272B 
+label-focused-underline = #ff79c6
 ;label-focused-underline = #2853ff
 label-focused-padding = 1
 ;label-focused-font = 4
