@@ -101,7 +101,7 @@ comm -23 <(pacman -Qqett | sort) <(pacman -Qqg base -g base-devel | sort | uniq)
 pacman -Qdtq
 
 # REMOVE UNUSED PACKAGES
-sudo pacman -Rns $(pacman Qdtq)
+sudo pacman -Rddns $(pacman Qdtq)
 
 # PACMAN NOT UPDATING - PGP KEYS ERROR
 sudo pacman -Sy archlinux-keyring
@@ -1033,4 +1033,27 @@ sudo vim /usr/share/icons/default/index.theme
 # On "Inherits=" change it to the theme's cursor name, e.g. Dracula-cursors
 
 '⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
+# SET EXTRA MOUSE BUTTONS 
+yay -S xvkbd xbindkeys
 
+# To know the name of the button, run this
+xev -event button | grep button
+# click on the white window and click on the button, it will appear on the terminal 'button 8' or another number
+
+# To know the name of the key, run this
+xev -event keyboard | grep keycode
+
+mkdir .config/xbindkeys
+vim .config/xbindkeys/.xbindkeysrc
+# Use the following as template:
+
+# Button 8 Home 
+"xvkbd -text '\[Home]'"
+ b:8
+
+# For some keys, you may need to refer to this: http://xahlee.info/linux/linux_xvkbd_tutorial.html
+
+# To make it autostart, put on your .profile the following:
+xbindkeys -f ~/.config/xbindkeys/.xbindkeysrc &
+
+'⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'

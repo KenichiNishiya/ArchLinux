@@ -23,10 +23,14 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-bspc rule -a "PacketTracer" state=floating
+bspc rule -a PacketTracer state=floating
 bspc rule -a "Image Lounge" state=floating rectangle=800x600+0+0
 bspc rule -a generic state=floating rectangle=800x600+0+0
+bspc rule -a Emulator state=floating rectangle=800x600+0+0
 bspc rule -a scrcpy state=floating
+bspc rule -a "Genymotion Player" state=floating rectangle=800x600+0+0
+bspc rule -a mpv state=floating rectangle=800x600+0+0
+
 # dual monitor settings
 if [[ $(xrandr -q | grep -w 'DP1' | cut -d ' ' -f2) = 'connected' ]]; then
 xrandr --output DP1 --mode 1024x768 --rate 75 --right-of eDP1

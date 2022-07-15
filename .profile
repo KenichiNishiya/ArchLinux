@@ -6,6 +6,7 @@ export MANGOHUD=0
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
+export PATH=/home/teruyo/.cargo/bin:$PATH
 
 # xdg-ninja
 #export XDG_DATA_HOME=$HOME/.local/share
@@ -40,15 +41,16 @@ sxhkd &
 picom --experimental-backend -b &
 nm-applet &
 fcitx5 &
-megasync &
+megasync & #xdotool search --name 'MEGAsync' windowclose
 # kdeconnect-indicator &
 numlockx &
 dunst &
 xfce4-power-manager &
 mpd &
 klipper &
-qbittorrent &
+qbittorrent & # xdotool search --name "qBittorrent v4.4.3.1" windowminimize
+#xbindkeys -f ~/.config/xbindkeys/.xbindkeysrc &
 #easyeffects --gapplication-service &
 
 # Minimize app
-sleep 1; xdotool search --name 'MEGAsync' windowclose
+#sleep 1; xdotool search --name 'MEGAsync' windowclose

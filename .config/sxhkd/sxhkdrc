@@ -32,10 +32,6 @@ XF86AudioMicMute
 super + slash
 	rofi -show emoji
 
-# token
-super + t
-	token
-
 #
 # keypad to open apps
 #
@@ -194,3 +190,7 @@ XF86MonBrightness + {Up,Down}
 # kill window
 ctrl + shift + Escape
 	xkill
+
+# map extra mouse buttons
+#button8
+        #xte "keydown Super_L" "keyup Super_L"
