@@ -1057,3 +1057,8 @@ vim .config/xbindkeys/.xbindkeysrc
 xbindkeys -f ~/.config/xbindkeys/.xbindkeysrc &
 
 '⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
+# MAKE COMPILING THINGS FASTER
+sudo vim /etc/makepkg.conf
+# On 'MAKEFLAGS' put the number of threads you have, or just leave it just like this:
+MAKEFLAGS="-j$(nproc)"
+'⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩⛩'
